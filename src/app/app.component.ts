@@ -9,13 +9,17 @@ import { Item } from './multi-select/item';
 export class AppComponent {
   title = 'multi-select-list';
   groceryList: Item[] = [
-    new Item('Jar Berry', 'Reset'),
-    new Item('Island Sale', 'IS'),
-    new Item('Original Network', 'ON'),
-    new Item('Internal Tank', 'IT')
+    {text: 'Jar Berry', value: 'Reset'},
+    {text: 'Island Sale', value: 'IS'},
+    {text: 'Original Network', value: 'ON'},
+    {text: 'Internal Tank', value: 'IT'}
   ];
 
   constructor() {
-    this.groceryList[0].setImage('broken.png');
+    this.groceryList[0].image = 'broken.png';
+  }
+
+  printSelection($selection: any) {
+    console.debug(`selection: ${JSON.stringify($selection)}`);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from './item';
 
 @Component({
@@ -10,6 +10,8 @@ export class MultiSelectComponent implements OnInit {
 
   @Input() data: Item[];
 
+  @Output() selection: EventEmitter<Item[]> = new EventEmitter<Item[]>();
+
   constructor() {
 
    }
@@ -19,15 +21,29 @@ export class MultiSelectComponent implements OnInit {
 
   getClass(i: Item): string {
 
-    return i.getSelected() ? 'selected' : '';
+    return i.selected ? 'selected' : '';
   }
 
   onClick(i: Item) {
-    console.debug(i.getText());
-    i.setSelected(!i.getSelected());
+    i.selected = !i.selected;
+
+    const arr = this.getSelection();
+    this.selection.emit(arr);
   }
 
   onDoubleClick() {
     console.debug('it\'s-a me! double click!')
+  }
+
+  private getSelection(): Item[] {
+
+    const arr: Item[] = [];
+
+    this.data.forEach(i => {
+      if(i.selected) {
+        arr.push(Object.assign({}, i));
+      }
+    });
+    return arr;
   }
 }

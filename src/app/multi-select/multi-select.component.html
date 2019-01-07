@@ -3,7 +3,7 @@
       [ngClass]="getClass(i)"
       (click)="onClick(i)"
       (dblclick)="onDoubleClick()">
-    <img *ngIf="i.getImage()" src="i.getImage()"/>
-    {{i.getText()}}
+    <img *ngIf="i.image" src="i.image"/>
+    {{i.text}}
   </li>
 </ul>

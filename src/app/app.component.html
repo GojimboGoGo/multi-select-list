@@ -16,5 +16,8 @@
 <router-outlet></router-outlet>
 
 <div id="select-cntnr">
-    <app-multi-select [data]="groceryList"></app-multi-select>
+    <app-multi-select 
+                      [data]="groceryList"
+                      (selection)="printSelection($event)">
+    </app-multi-select>
 </div>
