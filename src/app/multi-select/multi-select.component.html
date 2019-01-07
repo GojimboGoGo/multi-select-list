@@ -1,0 +1,9 @@
+<ul id="select-list">
+  <li *ngFor="let i of data"
+      [ngClass]="getClass(i)"
+      (click)="onClick(i)"
+      (dblclick)="onDoubleClick()">
+    <img *ngIf="i.getImage()" src="i.getImage()"/>
+    {{i.getText()}}
+  </li>
+</ul>

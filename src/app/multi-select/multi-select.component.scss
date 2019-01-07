@@ -1,0 +1,19 @@
+$highlight: gray;
+
+#select-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        cursor: pointer;
+    }
+
+    li.selected {
+        background-color: $highlight;
+    }
+
+    li:hover {
+        background-color: $highlight;
+    }
+}
