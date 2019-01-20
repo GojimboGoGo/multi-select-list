@@ -31,8 +31,8 @@ export class FileUploadComponent implements OnInit {
 
   dropHandler(ev: DragEvent) {
 
-    ev.preventDefault();
     ev.stopPropagation();
+    ev.preventDefault();
 
     this.fileover = false;
     
