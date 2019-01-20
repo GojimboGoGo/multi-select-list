@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MultiSelectComponent
+    MultiSelectComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,

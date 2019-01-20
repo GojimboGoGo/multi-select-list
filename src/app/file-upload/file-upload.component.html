@@ -1,0 +1,11 @@
+<label for="drop_zone" *ngIf="file">{{ file.name }}<br></label>
+<label id="type_error" for="drop_zone" *ngIf="typeError">{{ typeError }}<br></label>
+<label id="size_error" for="drop_zone" *ngIf="sizeError">{{ sizeError }}<br></label>
+
+<div id="drop_zone" [ngClass]="getClass()"
+      (drop)="dropHandler($event)"
+      (dragenter)="dragEnterHandler($event)"
+      (dragover)="dragOverHandler($event)"
+      (dragleave)="dragLeaveHandler($event)">
+  <p>Drag one or more files to this Drop Zone ...</p>
+</div>
